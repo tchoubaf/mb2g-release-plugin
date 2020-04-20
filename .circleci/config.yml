@@ -1,12 +1,4 @@
-version: 2.1
-
-orbs:
-  maven: circleci/maven@0.0.12
-
-workflows:
-  maven_test:
-    jobs:
-    # Java Maven CircleCI 2.0 configuration file
+# Java Maven CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
@@ -21,7 +13,6 @@ jobs:
             # CircleCI maintains a library of pre-built images
             # documented at https://circleci.com/docs/2.0/circleci-images/
             # - image: circleci/postgres:9.4
-
         working_directory: ~/repo
 
         environment:
@@ -44,7 +35,8 @@ jobs:
                   paths:
                       - ~/.m2
                   key: v1-dependencies-{{ checksum "pom.xml" }}
-                  
+
+            # run tests!
             - run: mvn integration-test
 
             #- run: git config user.email "john@springframework.guru"
