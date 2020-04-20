@@ -39,9 +39,10 @@ jobs:
             # run tests!
          
             
-            - run: mvn deploy -s .circleci/settings.xml
+            #- run: mvn deploy -s .circleci/settings.xml
 
             #- run: git config user.email "john@springframework.guru"
             #- run: git config user.name "Via CircleCI Build"
             # run tests!
-           # - run: mvn --batch-mode release:prepare release:perform -s .circleci/settings.xml  - maven/test # checkout, build, test, and upload test results
+            - run: mvn --batch-mode release:prepare release:perform -s .circleci/settings.xml
+                 #- maven/test # checkout, build, test, and upload test results
